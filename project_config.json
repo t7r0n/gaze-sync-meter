@@ -1,0 +1,32 @@
+{
+  "repo": "mirage-bench-local",
+  "package": "mirage_bench_local",
+  "cli": "mirage-bench",
+  "company": "Captions / Mirage",
+  "title": "Mirage Bench Local",
+  "tagline": "Offline multimodal talking-head quality benchmark for gaze, expression, posture, and lip-sync coherence.",
+  "problem": "Full-body video foundation models need benchmarks beyond lip-sync to prove natural eye contact, gesture, and expression timing.",
+  "project": "mirage-bench",
+  "plan_slug": "captions",
+  "scenario": "video clip",
+  "fixture_count": 160,
+  "clean_count": 40,
+  "metrics": [
+    "gaze_stability",
+    "prosody_expression_fit",
+    "posture_coupling",
+    "lipsync_grounding"
+  ],
+  "failure_modes": [
+    "gaze_drift",
+    "late_smile",
+    "stiff_posture",
+    "mouth_audio_desync"
+  ],
+  "wow": "A side-by-side clip leaderboard scores the axes where Mirage\u2019s full-motion thesis actually lives.",
+  "sources": [
+    "https://help.mirage.app/api-reference/api",
+    "https://captions.ai/mirage",
+    "https://captions.ai/help/docs/api/overview"
+  ]
+}
