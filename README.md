@@ -2,35 +2,20 @@
 
 Offline multimodal talking-head quality benchmark for gaze, expression, posture, and lip-sync coherence.
 
-This is a local-first, synthetic-data prototype inspired by a company-specific project plan for **Captions / Mirage**. It is built to demonstrate the engineering shape of `mirage-bench` without private data, credentials, external APIs, or hosted services.
+`Mirage Bench Local` is framed as an engineering instrument rather than a pitch deck: generate cases, break them, score them, and inspect the evidence.
 
-## Why it matters
+## Operating question
 
-Full-body video foundation models need benchmarks beyond lip-sync to prove natural eye contact, gesture, and expression timing.
+Offline multimodal talking-head quality benchmark for gaze, expression, posture, and lip-sync coherence.
 
-## What it does
+## Core mechanics
 
-- Generates deterministic synthetic `video clip` scenarios.
-- Scores each scenario against domain-specific quality gates.
-- Produces evidence-backed findings for realistic failure modes.
-- Writes a static dashboard, JSON reports, benchmark output, and a portable demo pack.
-- Exposes a JSONL tool loop for local agent integration.
+- Creates a clean/degraded `video clip` corpus sized for local iteration: 160 cases.
+- Uses `gaze_stability`, `prosody_expression_fit`, `posture_coupling`, and `lipsync_grounding` to explain why a run passed, failed, or needs inspection.
+- Turns `gaze_drift`, `late_smile`, `stiff_posture`, and `mouth_audio_desync` into executable cases with visible evidence trails.
+- Carries the same `mirage-bench` result through JSON, dashboard, benchmark, and demo-pack outputs.
 
-## Metrics
-
-- `gaze_stability`
-- `prosody_expression_fit`
-- `posture_coupling`
-- `lipsync_grounding`
-
-## Failure modes
-
-- `gaze_drift`
-- `late_smile`
-- `stiff_posture`
-- `mouth_audio_desync`
-
-## Quickstart
+## Try it
 
 ```bash
 uv sync --extra dev
@@ -42,7 +27,7 @@ uv run mirage-bench benchmark --iterations 100
 uv run mirage-bench export-demo-pack
 ```
 
-## Expected outputs
+## Generated evidence
 
 - `data/scenarios.json`
 - `outputs/summary.json`
@@ -52,7 +37,7 @@ uv run mirage-bench export-demo-pack
 - `outputs/benchmark.json`
 - `outputs/demo-pack.zip`
 
-## Validation
+## Regression gate
 
 ```bash
 uv run ruff check .
@@ -62,6 +47,6 @@ uv run mirage-bench verify
 uv run mirage-bench benchmark --iterations 100
 ```
 
-## Demo hook
+## Scope
 
-A side-by-side clip leaderboard scores the axes where Mirage’s full-motion thesis actually lives.
+`Mirage Bench Local` is built for local reproduction: deterministic inputs enter the run, deterministic evidence comes out, and private data stays outside the repo.
