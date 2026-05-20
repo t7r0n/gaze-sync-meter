@@ -1,5 +1,5 @@
 [project]
-name = "mirage-bench-local"
+name = "gaze-sync-meter"
 version = "0.1.0"
 description = "Offline multimodal talking-head quality benchmark for gaze, expression, posture, and lip-sync coherence."
 readme = "README.md"
@@ -18,7 +18,7 @@ dev = [
 ]
 
 [project.scripts]
-mirage-bench = "mirage_bench_local.cli:main"
+gaze-sync-meter = "gaze_sync_meter.cli:main"
 
 [build-system]
 requires = ["uv_build>=0.9.0,<0.10.0"]

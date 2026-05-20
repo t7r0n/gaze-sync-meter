@@ -4,7 +4,7 @@ import json
 import subprocess
 import sys
 
-from mirage_bench_local.engine import (
+from gaze_sync_meter.engine import (
     LocalHarness,
     benchmark,
     export_demo_pack,
@@ -12,7 +12,7 @@ from mirage_bench_local.engine import (
     run_suite_and_write,
     verify_outputs,
 )
-from mirage_bench_local.fixtures import init_store, load_config, load_scenarios
+from gaze_sync_meter.fixtures import init_store, load_config, load_scenarios
 
 
 def test_fixture_scale(tmp_path):
@@ -54,7 +54,7 @@ def test_jsonl_tool_loop(tmp_path):
 
 def test_benchmark_and_cli_smoke():
     result = subprocess.run(
-        [sys.executable, "-m", "mirage_bench_local.cli", "init-demo", "--force"],
+        [sys.executable, "-m", "gaze_sync_meter.cli", "init-demo", "--force"],
         check=True,
         capture_output=True,
         text=True,
